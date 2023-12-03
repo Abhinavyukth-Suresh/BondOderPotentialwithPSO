@@ -140,8 +140,9 @@ typedef struct {
     float* personal_best;
     float** Pbest_vector;
     float (*f)(float*);
-}Swarm;     
+}Swarm;   
 
+#pragma omp parallel for num_threads(n_threads)
 Swarm init(float (*optim_func)(float*),size_t swarm_size,size_t input_vec_dim,float upper_bound,float lower_bound){
     srand(time(NULL));
     float** swarm =calloc(swarm_size,sizeof(float*));
