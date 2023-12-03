@@ -50,7 +50,7 @@ def setup(setup_=False,n=80):
 
     
     
-    print(f'compile -fopenmp -shared -fPIC -O3  -msse -mavx -mavx2  -o CDLL/shared.so {cmp_str}')
+    print(f'gcc -shared -fPIC -O3  -msse -mavx -mavx2  -fopenmp -lm -D N={n} -D NTHREADS={ncpu} -o CDLL/shared.so all.c')
     #status = os.system(f'gcc -shared -fPIC -O3  -msse -mavx -mavx2  -fopenmp -lm -D N={n} -D NTHREADS={ncpu} -o CDLL/shared.so all.c')
     status = os.system(f'gcc -shared -fPIC -O3  -msse -mavx -mavx2  -fopenmp -lm -D N={n} -D NTHREADS={ncpu} -o CDLL/shared.so all.c')
     #
