@@ -309,4 +309,3 @@ float* GetGlobalBestCandidate(float c1, float c2, float w, float chi,size_t Swar
     printf("\n total time elapsed %f ms\n",(double)(t2-t1)/1000);
     return swarm.Gbest_vector;
 }
-
