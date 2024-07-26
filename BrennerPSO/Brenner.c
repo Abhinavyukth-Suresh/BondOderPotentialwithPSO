@@ -47,7 +47,6 @@ float BrennerPotential(float* r){
     float cos_ijk,rik,rjk,fij,fik,fjk,xik,xjk;
     Bij=0;Bji=0;B_ij=0;Ni=0,Nj=0,Nconj=1,Gc_ijk=0;
 
-    #pragma omp simd
     for(i=0;i<n;i++){
         for(j=i+1;j<n;j++){
             Bij=1;Bji=1;B_ij=0;Ni=0,Nj=0,Nconj=1,Gc_ijk=0,Gc_jik=0;
