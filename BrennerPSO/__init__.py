@@ -36,7 +36,7 @@ cwd_path = os.path.dirname(os.path.realpath(__file__))
 if platform.uname().system =="Windows":
     cdll = ctypes.CDLL(cwd_path+'\\CDLL\\.\\shared.so',winmode=0)
 else:
-    cdll = ctypes.CDLL(cwd_path+'\\CDLL\\.\\shared.so')
+    cdll = ctypes.CDLL(cwd_path+'/CDLL/shared.so')
 os.chdir(real_path)  
 
 get_n = cdll.get_n
