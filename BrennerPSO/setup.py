@@ -50,9 +50,9 @@ def setup(setup_=False,n=80):
 
     
     
-    print(f'gcc -shared -fPIC -O3  -msse -mavx -mavx2  -fopenmp -lm -D N={n} -D NTHREADS={ncpu} -o CDLL/shared.so all.c')
+    print(f'gcc -shared -fPIC -O3 -march=native -fopenmp -ffast-math -DN={n} -DNTHREADS={ncpu} -DCACHE_BLOCK=64 -o CDLL/shared.so all.c')
     #status = os.system(f'gcc -shared -fPIC -O3  -msse -mavx -mavx2  -fopenmp -lm -D N={n} -D NTHREADS={ncpu} -o CDLL/shared.so all.c')
-    status = os.system(f'gcc -shared -fPIC -O3  -msse -mavx -mavx2  -fopenmp -lm -D N={n} -D NTHREADS={ncpu} -o CDLL/shared.so all.c')
+    status = os.system(f'gcc -shared -fPIC -O3 -march=native -fopenmp -ffast-math -DN={n} -DNTHREADS={ncpu} -DCACHE_BLOCK=64 -lm -o CDLL/shared.so all.c')
     #
     if status != 0:
 
