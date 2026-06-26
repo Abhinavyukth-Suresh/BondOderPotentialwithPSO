@@ -70,7 +70,7 @@ def setup(setup_=False,n=80):
     if platform.uname().system =="Windows":
         cdll = ctypes.CDLL(cwd_path+'\\CDLL\\.\\shared.so',winmode=0)
     else:
-        cdll = ctypes.CDLL(cwd_path+'\\CDLL\\.\\shared.so')
+        cdll = ctypes.CDLL(cwd_path+'/CDLL/shared.so')
     #cdll = ctypes.CDLL('CDLL/./shared.so')
     get_n = cdll.get_n
     get_n.restype = ctypes.c_int
