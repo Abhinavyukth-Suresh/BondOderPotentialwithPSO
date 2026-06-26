@@ -16,7 +16,8 @@ def setup(setup_=False,n=80):
         print('CANNOT REMOVE ERROR :',e)
         raise Exception( f"TRY MANUALLY DELETIND shared.so file from path \n {path}\\CDLL\\shared.so")
     
-    list_files = ['shared.c','Brenner.c','PSO.c']#,'Brenner.h','PSO.h']
+    #list_files = ['shared.c','Brenner.c','PSO.c']#,'Brenner.h','PSO.h']
+    list_files = ['all.c']
     list_C = [i for i in list_files if ".c" in i]
     dirs = os.listdir()
     print('\nCHECKING FILES AND RESOURCES')
